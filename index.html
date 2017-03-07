@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Absolute</title>
+    <title>Dongjin Na and Soyoung Kim's wedding!</title>
     <link rel="manifest" href="/manifest.json">
     <script src="push/sw_manager.js"></script>
     <meta charset="UTF-8">
@@ -13,11 +13,10 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <script src="/wedding/ui/semantic.min.js"></script>
-    <title>
-      Dongjin Na and Soyoung Kim's wedding!
-    </title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=hTAk30BWZ6ySVDe_2tpK"></script>
   </head>
   <body>
+	 <!----------------------------------------------- NAVI -------------------------------------->
     <div class="ui segment" id="top">
       <div class="ui sticky">
         <div class="ui orange fluid four item inverted menu">
@@ -27,8 +26,8 @@
           <a class="item" href="#guest">GUEST</a>
         </div>
       </div>
-      <img class="ui centered medium image" src="/wedding/images/etc/name.png">
       <br>
+	  <!----------------------------------------------- MAIN -------------------------------------->
       <div class="ui fluid image">
         <div class="ui pink ribbon label">
           LOVE
@@ -36,34 +35,45 @@
         <img src="/wedding/images/studio/main.jpg">  
       </div>
       <br>
+      <img class="ui centered medium image" src="/wedding/images/etc/name.png">
       <img class="ui centered medium image" src="/wedding/images/etc/text_1.png">
       <br>
-      <img class="ui centered medium image" src="/wedding/images/etc/greetings.png">
+      <img class="ui centered fluid image" src="/wedding/images/etc/invitation.jpg">
       <br>
+	  <!----------------------------------------------- MAP -------------------------------------->
       <div id="map">
         <br>
         <br>
       </div>
       <div class="ui horizontal divider">
-        <h1 class="ui orange center aligned header">MAP</h1>
+        <h3 class="ui orange center aligned header">MAP</h1>
       </div>
-      <img class="ui centered medium image" src="/wedding/images/etc/map.jpg">
+      <img class="ui centered fluid image" src="/wedding/images/etc/map.jpg">
+      <div id="naver_map" style="width:100%;height:300px;"></div>
+      <script>
+        var mapOptions = {
+        	center: new naver.maps.LatLng(37.496978, 127.0267254),
+        	zoom: 10
+        };
+        var map = new naver.maps.Map('naver_map', mapOptions);
+        var marker = new naver.maps.Marker({
+        	position: new naver.maps.LatLng(37.496978, 127.0267254),
+        	map: map
+        });
+      </script>
+	  <!----------------------------------------------- GALLERY -------------------------------------->
       <div id="gallery">
         <br>
         <br>
       </div>
       <div class="ui horizontal divider">
-        <h1 class="ui orange center aligned header">Wedding Gallery</h1>
+        <h3 class="ui orange center aligned header">Wedding Gallery</h1>
       </div>
+      <br>
       <div class="ui two doubling  cards">
         <div class="card">
           <div class="image ">
             <img src="/wedding/images/studio/studio_2.jpg">
-          </div>
-        </div>
-        <div class="card">
-          <div class="image ">
-            <img src="/wedding/images/studio/studio_3.jpg">
           </div>
         </div>
         <div class="card">
@@ -83,17 +93,7 @@
         </div>
         <div class="card">
           <div class="image">
-            <img src="/wedding/images/studio/studio_6.jpg">
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
             <img src="/wedding/images/studio/studio_7.jpg">
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img src="/wedding/images/studio/studio_8.jpg">
           </div>
         </div>
         <div class="card">
@@ -106,14 +106,21 @@
             <img src="/wedding/images/studio/studio_10.jpg">
           </div>
         </div>
+        <div class="card">
+          <div class="image ">
+            <img src="/wedding/images/studio/studio_3.jpg">
+          </div>
+        </div>
       </div>
+	  <!----------------------------------------------- GUEST -------------------------------------->
       <div id="guest">
         <br>
         <br>
       </div>
       <div class="ui horizontal divider">
-        <h1 class="ui orange center aligned header">GUEST</h1>
+        <h3 class="ui orange center aligned header">GUEST (under construction)</h1>
       </div>
+	  <br>
       <div class="ui comments">
         <h3 class="ui dividing header">Comments</h3>
         <div class="comment">
